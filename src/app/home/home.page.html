@@ -5,21 +5,28 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-item>
     <ion-input label="CEP" placeholder="12345-000" [(ngModel)]="cep"></ion-input>
   </ion-item>
-  <ion-button (click)="consultarCEP(cep)">Consultar</ion-button>
+  <ion-button class="consulta-cep" (click)="consultarCEP(cep)">Consultar</ion-button>
   <ion-item>{{rua}}</ion-item>
   <ion-item>{{bairro}}</ion-item>
   <ion-item>{{cidade}}</ion-item>
   <ion-item>{{estado}}</ion-item>
 
-  <ion-title>Consulta Endereço</ion-title>
-  <ion-input label="UF" placeholder="UF" [(ngModel)]="uf"></ion-input>
-  <ion-input label="Cidade" placeholder="Natal" [(ngModel)]="localidade"></ion-input>
-  <ion-input label="Logradouro" placeholder="Rua Guanabara" [(ngModel)]="logradouro"></ion-input>
-  <ion-button (click)="consultarEndereco(uf, localidade, logradouro)">Consultar</ion-button>
-  <ion-list *ngFor="let resultado of resultadoCEP" >
-    <ion-item>{{resultado}}</ion-item>
-  </ion-list>
+  <div class="consulta-endereco">
+    <ion-text class="subtitle">Consulta Endereço</ion-text>
+    <ion-input label="UF" placeholder="UF" [(ngModel)]="uf"></ion-input>
+    <ion-input label="Cidade" placeholder="Natal" [(ngModel)]="localidade"></ion-input>
+    <ion-input label="Logradouro" placeholder="Rua Guanabara" [(ngModel)]="logradouro"></ion-input>
+    <ion-button (click)="consultarEndereco(uf, localidade, logradouro)">Consultar</ion-button>
+    <ion-list *ngFor="let resultado of resultadoCEP" >
+      <ion-item>{{resultado}}</ion-item>
+    </ion-list>
+  </div> 
+
+
+  
+
 </ion-content>
